@@ -1,9 +1,16 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+// @flow
 
-class App extends Component {
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+
+type Props = any;
+
+class App extends Component<Props> {
+  _width: string = "abc";
+
   render() {
+    this._width = "def";
     return (
       <div className="App">
         <header className="App-header">
@@ -19,6 +26,7 @@ class App extends Component {
           >
             Learn React
           </a>
+          <p>_width = {this._width}</p>
         </header>
       </div>
     );
